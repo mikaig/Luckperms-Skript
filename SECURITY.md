@@ -7,6 +7,7 @@ currently being supported with security updates.
 
 | Tested Version |
 | ------- | ------------------ |
+
 | 1.20.1x  | :white_check_mark: |
 
 ## Reporting a Vulnerability
