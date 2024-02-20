@@ -1,2 +1,4 @@
-# Luckperms-Skript
-You'll need luckperms installed for this skript
+# luckperms skript
+cool skript for luckperms
+
+# do not claim this skript as your own
