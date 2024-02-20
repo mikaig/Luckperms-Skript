@@ -1,0 +1,58 @@
+command /lps [<text>] [<text>] [<offline player>]:
+	permission: skript.luckperms
+	permission message: &cYou Can't Execute This
+	trigger:
+		if arg 1 is not set:
+			message "&7[&b&lL&3&lP&7] &2Running &bLuckperms v5.4.117&2."
+			message "&7[&b&lL&3&lP&7] &3Use &a/lps help &3to view available commands."
+		if arg 1 is "rank":
+			if player has permission "luckperms.rank":
+				if arg 2 is set:
+					execute console command "/lp user %arg-3% %arg-2%"
+					message "&7[&b&lL&3&lP&7] &3LOG > &8<&eConsole&8> &8[&aU&8] &8<&b%arg-2%"
+					message "&7[&b&lL&3&lP&7] &3LOG > &fparent set %arg-2%"
+				if arg 2 is not set:
+					message "Usage: /lps rank <plyer> <rank>"
+		if arg 1 is "info":
+			if player has permission "luckperms.info":
+				execute player command "/lp info"
+		if arg 1 is "help":
+			if player has permission "luckperms.help":
+				execute player command "/lp help"
+		if arg 1 is "editor":
+			if player has permission "luckperms.editor":
+				execute player command "/lp editor"
+		if arg 1 is "edit":
+			if player has permission "luckperms.edit":
+				execute player command "/lp editor"
+		if arg 1 is "recent":
+			if player has permission "luckperms.recent":
+				execute player command "/lp log recent"
+		if arg 1 is "reload":
+			if player has permission "luckperms.reload":
+				execute player command "sk reload luckperms"
+		if arg 1 is "commands":
+			if player has permission "luckperms.commands":
+				message "&7[&b&lL&3&lP&7] &b/lps rank"
+				message "&7[&b&lL&3&lP&7] &b/lps info"
+				message "&7[&b&lL&3&lP&7] &b/lps help"
+				message "&7[&b&lL&3&lP&7] &b/lps editor"
+				message "&7[&b&lL&3&lP&7] &b/lps edit"
+				message "&7[&b&lL&3&lP&7] &b/lp recent"
+				message "&7[&b&lL&3&lP&7] &b/lp reload"
+				message "&7[&b&lL&3&lP&7] &b/lp commands"
+				message "&7[&b&lL&3&lP&7] &b/lp searchplugin"
+				message "&7[&b&lL&3&lP&7] &b/lp searchpage"
+		if arg 1 is "searchplugin":
+			if player has permission "luckperms.plugin.search":
+				if arg 1 is set:
+					execute player command "/lp search %arg-2%"
+				if arg 1 is not set:
+					message "Usage /lp search <plugin>"
+		if arg 1 is "searchpage":
+			if player has permission "luckperms.page.search":
+				if arg 1 is set:
+					execute player command "/lp search %arg-2%"
+				if arg 1 is not set:
+					message "Usage /lp search <page>"
+			
